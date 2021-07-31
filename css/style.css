@@ -1,0 +1,263 @@
+:root{
+    --bg-color: #111;
+    --two-color: #383838;
+    --three-color: #333;
+    --txt-color: #fcfcfc;
+    
+    --size-rem: 2rem;
+    --size-rem-1: 4rem;
+
+    --sm-width: 320px;
+    --md-width: 780px;
+}
+
+
+
+.container{
+    width: 1140px;
+    padding:.5rem;
+}
+
+/* Body Grid Sustem */
+
+.body__grid{
+    display: grid;
+    padding: 0;
+    margin: 0;
+    grid-template-rows: 3fr;
+    row-gap: .7rem;
+    background-color: var(--bg-color) !important;
+    color: var(--txt-color) !important;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+}
+
+/* Nav bar start */
+header > nav {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--two-color);
+    padding: .3rem 1rem;
+    border-radius: 10px;
+}
+
+.menu{
+    display: inline-flex;
+    column-gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.btn-menu{
+    display: none;
+}
+
+.logo{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.logo > img{
+    max-width: 100%;
+    margin: auto 0;
+    grid-column: 1/2;
+    grid-row: 1/3;
+}
+
+.logo > h1{
+    display: block;
+    grid-column: 2/4;
+    grid-row: 1/2;
+    line-height: 1px;
+    font-size:2rem;
+}
+
+.slogan{
+    grid-column: 2/3;
+    grid-row: 2/3;
+    line-height: 1px;
+    font-size:12px;
+}
+
+main{
+    padding: 2rem;
+    grid-row: 2/3;
+    height: 40rem;
+    border: 1px solid var(--txt-color);
+}
+
+footer{
+    grid-row: 3/4;
+    height: 4rem;
+    border: 1px solid var(--txt-color);
+}
+
+
+
+@media (max-width: 1140px){
+    .container{
+        width: 98%;
+        padding:.5rem;
+    }
+}
+
+
+
+@media (max-width: 870px){
+        header > nav{
+            z-index: 2;
+        }
+
+    .dropdown-open{
+        display:block !important;
+        /* grid-row: 2/3 !important; */
+        
+        animation: open-nav 1s forwards;
+        z-index: 1 !important;
+        background-color: var(--two-color);
+        position: absolute;
+        right: 1rem;
+    }
+
+    .dropdown-close{
+        display:block !important;
+        /* grid-row: 2/3 !important; */
+        
+        animation: close-nav 1s forwards;
+        z-index: 1 !important;
+        background-color: var(--two-color);
+        position: absolute;
+        right: 1rem;
+    }
+
+    .container{
+        width: 98%;
+        padding:.5rem;
+    }
+
+    .menu{
+        display: none;
+    }
+
+    header > nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--two-color);
+        padding: .3rem 1rem;
+        border-radius: 10px;
+    }
+
+    .logo{
+        grid-column: 1/2;
+    }
+
+    .btn-menu{
+        display: block;
+        grid-column: 2/3;
+        background-color: inherit;
+        padding: 1rem;
+        color: var(--txt-color);
+        justify-self: end;
+        transition: all .5s;
+    }
+
+    .btn-menu:hover{
+        padding: 1rem;
+        border: 1px solid var(--two-color);
+        border-radius: 9px;
+        background-color: var(--three-color);
+        transition: all .5s;
+    }
+
+    .menu{
+        
+        flex-wrap: wrap;
+        column-gap: .8rem;
+        padding: .4rem;
+    }
+
+    .menu__item{
+        padding: .2rem .4rem;
+        border-bottom: 2px solid var(--three-color) ;
+        margin-bottom: .7rem;
+    }
+}
+
+@media (max-width: 480px){
+    header > nav {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        align-items: center;
+        justify-content: center;
+        background-color: var(--two-color);
+        padding: .3rem 1rem;
+        border-radius: 10px;
+    }
+
+    .logo{
+        grid-column: 1/3;
+    }
+
+    
+
+
+    .btn-menu{
+        display: block;
+        grid-column: 3/4;
+        background-color: inherit;
+        padding: 1rem;
+        color: var(--txt-color);
+        justify-self: end;
+        transition: all .5s;
+    }
+
+    .btn-menu:hover{
+        padding: 1rem;
+        border: 1px solid var(--two-color);
+        border-radius: 9px;
+        background-color: var(--three-color);
+        transition: all .5s;
+    }
+
+    .logo > h1{
+        display: block;
+        grid-column: 2/4;
+        grid-row: 1/3;
+        line-height: 1px;
+        font-size:1.5rem;
+    }
+    
+    .slogan{
+        display: none;
+    }
+}
+
+
+
+
+@keyframes open-nav {
+    0%{
+        margin-top: 1rem;
+    }
+    100%{
+        margin-top: 16rem;
+    }
+}
+
+ @keyframes close-nav {
+    0%{
+        margin-top: 0rem;
+    }
+    100%{
+        margin-top: -17rem;
+    }
+} 
+
+/* Nav bar end */
+
